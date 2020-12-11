@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Актуальные промо{% endblock %}
+
+{% block content %}
+
+    {% if latest_promo_list %}
+        {% for a in latest_promo_list %}
+        <a href="{% url 'pr:detail' a.id%}">{{a.name}}</a>
+        {% endfor %}
+
+    {% else %}
+        Нет промо блэт
+    {% endif %}
+
+{% endblock %}
